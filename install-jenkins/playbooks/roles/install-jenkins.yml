@@ -1,0 +1,11 @@
+- hosts: webservers
+  connection: local
+  vars:
+    jenkins_admin_username: admin
+    jenkins_admin_password: admin
+
+  roles:
+    - role: geerlingguy.java
+      become: Yes
+    - role: geerlingguy.jenkins
+      become: Yes
